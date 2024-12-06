@@ -5,7 +5,6 @@ class House:
         print (name, number_of_floors)
 
     def go_to(self, new_floor : int):
-        int(new_floor)
         if new_floor < 1 or new_floor > self.number_of_floors:
             print("такого этажа не существует")
         else:
