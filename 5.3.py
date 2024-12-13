@@ -4,23 +4,44 @@ class House:
         self.number_of_floors = number_of_floors
 ### блок перегрузок
     def __eq__(self, other):
-        return(self.number_of_floors == other.number_of_floors)
+        if isinstance(other, House):
+            return(self.number_of_floors == other.number_of_floors)
+        else:
+            print('неверный тип данных')
     def __lt__(self, other):
-        return (self.number_of_floors < other.number_of_floors)
+        if isinstance(other, House):
+            return (self.number_of_floors < other.number_of_floors)
+        else:
+            print('неверный тип данных')
     def __le__(self, other):
-        return (self.number_of_floors <= other.number_of_floors)
+        if isinstance(other, House):
+            return (self.number_of_floors <= other.number_of_floors)
+        else:
+            print('неверный тип данных')
     def __gt__(self, other):
-        return (self.number_of_floors > other.number_of_floors)
+        if isinstance(other, House):
+            return (self.number_of_floors > other.number_of_floors)
+        else:
+            print('неверный тип данных')
     def __ge__(self, other):
-        return (self.number_of_floors >= other.number_of_floors)
+        if isinstance(other, House):
+            return (self.number_of_floors >= other.number_of_floors)
+        else:
+            print('неверный тип данных')
     def __ne__(self, other):
-        return (self.number_of_floors != other.number_of_floors)
+        if isinstance(other, House):
+            return (self.number_of_floors != other.number_of_floors)
+        else:
+            print('неверный тип данных')
 ### блок перегрузок закончен
 ### блоки задания мод 5.3:
     def __add__(self, value):
         #self = Название: ЖК Эльбрус, кол-во этажей: 10.
-        self.number_of_floors += value
-        return (self)
+        if isinstance(value, int):
+            self.number_of_floors += value
+            return (self)
+        else:
+            print('неверный тип данных')
     def __radd__(self, value):
         return (self.__add__(value))
     def __iadd__(self, value):
